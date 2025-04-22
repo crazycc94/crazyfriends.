@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Friends</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Crazy Friends</h1>
+    </header>
+    <main>
+        <!-- Menú principal -->
+        <div id="main-menu" class="content-box">
+            <h2>Bienvenidos a Crazy Friends</h2>
+            <p>Conéctate con tus amigos, organiza planes y diviértete.</p>
+            <button onclick="showLogin()" class="menu-button">Iniciar Sesión</button>
+            <button onclick="showRegister()" class="menu-button">Registrarse</button>
+        </div>
+
+        <!-- Formulario de inicio de sesión -->
+        <div id="login-form" class="content-box" style="display: none;">
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <label for="login-username">Usuario:</label>
+                <input type="text" id="login-username" placeholder="Tu usuario" required><br>
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" placeholder="Tu contraseña" required><br>
+                <button type="submit" class="menu-button">Entrar</button>
+            </form>
+            <button onclick="goBackToMenu()" class="menu-button">Volver</button>
+        </div>
+
+        <!-- Formulario de registro -->
+        <div id="register-form" class="content-box" style="display: none;">
+            <h2>Registrarse</h2>
+            <form>
+                <label for="register-username">Usuario:</label>
+                <input type="text" id="register-username" placeholder="Elige un usuario" required><br>
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" placeholder="Elige una contraseña" required><br>
+                <label for="register-email">Correo Electrónico:</label>
+                <input type="email" id="register-email" placeholder="Tu correo electrónico" required><br>
+                <button type="submit" class="menu-button">Registrarse</button>
+            </form>
+            <button onclick="goBackToMenu()" class="menu-button">Volver</button>
+        </div>
+
+        <!-- Contenido principal (oculto inicialmente) -->
+        <div id="main-content" style="display: none;">
+            <div id="agenda" class="tab-content">
+                <h2>Agenda de Planes</h2>
+                <form id="plan-form">
+                    <label for="plan-title">Título del Plan:</label>
+                    <input type="text" id="plan-title" placeholder="Ejemplo: Barbacoa en el parque" required><br>
+                    <label for="plan-location">Lugar:</label>
+                    <input type="text" id="plan-location" placeholder="Ejemplo: Parque Central" required><br>
+                    <label for="plan-date">Fecha:</label>
+                    <input type="date" id="plan-date" required><br>
+                    <label for="plan-time">Hora:</label>
+                    <input type="time" id="plan-time" required><br>
+                    <label for="plan-activity">Actividad:</label>
+                    <textarea id="plan-activity" placeholder="Ejemplo: Traer comida y bebidas" required></textarea><br>
+                    <label for="plan-photo">Foto del lugar:</label>
+                    <input type="file" id="plan-photo" accept="image/*" required><br>
+                    <button type="submit">Crear Plan</button>
+                </form>
+                <div id="plan-list" class="content-box" style="margin-top: 20px;">
+                    <h3>Planes Creados</h3>
+                    <!-- Los planes creados aparecerán aquí -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Crazy Friends</p>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
